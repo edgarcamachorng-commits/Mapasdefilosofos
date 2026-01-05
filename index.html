@@ -157,10 +157,16 @@
             { id: "j83", name: "Páll Skúlason", region: "islandia", regionName: "Islandia", subcategory: "Filosofía de la Tecnología", era: "1945 - 2015", area: "Ética y antropología filosófica", concepts: "Autocomprensión humana por tecnología, responsabilidad y dignidad", works: ["Sobre la tecnología", "Amor y placer"], location: [64.126, -21.817], city: "Reikiavik", color: "#8e44ad" },
             { id: "j84", name: "Vilhjálmur Árnason", region: "islandia", regionName: "Islandia", subcategory: "Bioética", era: "1953 - ", area: "Ética aplicada y bioética", concepts: "Fundamentos éticos de la biotecnología, marcos regulatorios médicos", works: ["Ética y responsabilidad colectiva (1995)"], location: [64.963, -19.020], city: "Reikiavik", color: "#8e44ad" },
             { id: "j85", name: "Jón Ólafsson", region: "islandia", regionName: "Islandia", subcategory: "Filosofía Política", era: "1964 - ", area: "Teoría de la democracia y estudios de medios", concepts: "Esfera pública digital, desinformación, democracia deliberativa", works: ["¿Gente independiente en red? (2005)"], location: [64.126, -21.817], city: "Reikiavik", color: "#8e44ad" }
+            { id: "j86", name: "Simón Rodríguez", region: "venezuela", regionName: "Venezuela", subcategory: "Siglo XIX - Independencia", era: "1769-1854", area: "Teoría de la educación y filosofía política", concepts: "Inventamos o erramos, educación para la Independencia, republicanismo", works: ["Sociedades Americanas (1828)"], location: [10.5, -66.933], city: "Caracas", color: "#e74c3c" }
         ];
 
         // Lógica de Mapa y Filtrado
-        const map = L.map('map').setView([52, 10], 4);
+        const map = L.map('map', {
+           center: [25, -30],
+           zoom: 2,
+           minZoom: 2,
+           maxBounds: [[-60, -120], [80, 60]] // Incluye América y Europa
+        });
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
         const layers = {};
@@ -272,4 +278,5 @@
         });
     </script>
 </body>
+
 </html>
